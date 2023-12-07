@@ -43,12 +43,11 @@ export const resume = async (args: string[]): Promise<string> => {
   return 'Opening resume...';
 };
 
-// Donate
-export const donate = async (args: string[]): Promise<string> => {
-  return `thank you for your interest. 
-here are the ways you can support my work:
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
+// Projects
+export const projects = async (args: string[]): Promise<string> => {
+  return `here are some of my projects. 
+hope you like it!
+-> <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.projects.mern_app}" target="_blank">Mern app</a></u>
 `;
 };
 
@@ -83,7 +82,7 @@ export const duckduckgo = async (args: string[]): Promise<string> => {
 
 export const bing = async (args: string[]): Promise<string> => {
   window.open(`https://bing.com/search?q=${args.join(' ')}`);
-  return `Wow, really? You are using bing for ${args.join(' ')}?`;
+  return `Haha nice one, no one really uses bing... right? ${args.join(' ')}?`;
 };
 
 export const reddit = async (args: string[]): Promise<string> => {
@@ -110,7 +109,7 @@ directories`;
 
 export const cd = async (args: string[]): Promise<string> => {
   return `unfortunately, i cannot afford more directories.
-if you want to help, you can type 'donate'.`;
+perhaps if i got a job...`;
 };
 
 export const date = async (args: string[]): Promise<string> => {
@@ -138,17 +137,19 @@ export const sudo = async (args?: string[]): Promise<string> => {
   return `Permission denied: with little power comes... no responsibility? `;
 };
 
+// Reload
+export const reload = async (args?: string[]): Promise<void> => {
+  return location.reload();
+};
+
 // Banner
 export const banner = (args?: string[]): string => {
   return `
-█████        ███                       ███████████                                   
-░░███        ░░░                       ░█░░░███░░░█                                   
- ░███        ████  █████ █████  ██████ ░   ░███  ░   ██████  ████████  █████████████  
- ░███       ░░███ ░░███ ░░███  ███░░███    ░███     ███░░███░░███░░███░░███░░███░░███ 
- ░███        ░███  ░███  ░███ ░███████     ░███    ░███████  ░███ ░░░  ░███ ░███ ░███ 
- ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███ 
- ███████████ █████  ░░█████   ░░██████     █████   ░░██████  █████     █████░███ █████
-░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ 
+  ██████   ██████  ██████  ████████ ███████  ██████  ██      ██  ██████  
+  ██   ██ ██    ██ ██   ██    ██    ██      ██    ██ ██      ██ ██    ██ 
+  ██████  ██    ██ ██████     ██    █████   ██    ██ ██      ██ ██    ██ 
+  ██      ██    ██ ██   ██    ██    ██      ██    ██ ██      ██ ██    ██ 
+  ██       ██████  ██   ██    ██    ██       ██████  ███████ ██  ██████
 
 Type 'help' to see the list of available commands.
 Type 'sumfetch' to display summary.
